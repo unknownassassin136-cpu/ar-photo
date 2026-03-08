@@ -5,7 +5,7 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 
 <title>AR Polaroid Video</title>
 
@@ -20,8 +20,13 @@
 <a-scene
 embedded
 vr-mode-ui="enabled: false"
-renderer="logarithmicDepthBuffer: true; antialias: true; alpha: true"
-arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+renderer="logarithmicDepthBuffer: true; antialias: true; alpha: true;"
+arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;
+videoTexture: true;
+sourceWidth:1280;
+sourceHeight:720;
+displayWidth:1280;
+displayHeight:720;"
 
 >
 
@@ -62,10 +67,9 @@ material="shader: flat"
 
 > </a-video>
 
+<!-- Debug cube -->
 
-<a-nft type="nft" url="nft/photo">
-
-<a-box color="red"></a-box>
+<a-box color="red" position="0 0 0"></a-box>
 
 </a-nft>
 
