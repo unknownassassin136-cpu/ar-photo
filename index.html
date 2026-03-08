@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>AR Polaroid Video</title>
 
@@ -19,20 +19,21 @@
 
 <a-scene
 embedded
-arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-renderer="logarithmicDepthBuffer: true;"
 vr-mode-ui="enabled: false"
+renderer="logarithmicDepthBuffer: true; antialias: true; alpha: true"
+arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
 
 >
 
 <a-assets>
 
 <video
-id="video"
+id="arvideo"
 src="video.mp4"
+preload="auto"
 loop
-autoplay
 muted
+autoplay
 playsinline
 webkit-playsinline
 crossorigin="anonymous"
@@ -52,11 +53,11 @@ smoothThreshold="5"
 >
 
 <a-video
-src="#video"
+src="#arvideo"
 width="1.6"
-height="1"
-rotation="-90 0 0"
+height="0.9"
 position="0 0 0"
+rotation="-90 0 0"
 material="shader: flat"
 
 > </a-video>
